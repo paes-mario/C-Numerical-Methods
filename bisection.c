@@ -10,6 +10,7 @@ tolerance of 10^-5
 #include <math.h>
 
 double f(double x);
+
 int main(void) {
     double a = 1.0, b = 2.0, tol = 1e-5, m;
     int it = 0; // iterations counter
@@ -27,7 +28,8 @@ int main(void) {
     printf("The root of the polynomial is: %f\n", m);
     printf("The number of interations is: %d", it);    
 }
-double p(double x) {
+
+double f(double x) {
     return pow(x,3)-x-1;
 }
 
