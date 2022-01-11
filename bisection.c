@@ -1,5 +1,10 @@
-/* find a root for p(x)=x^3-x-1 polynomial
-use Bisection Method with x in [1,2] interval */
+/*
+
+Find a root for f(x)=x^3-x-1 polynomial by Bisection Method
+x in [1,2] interval so a=1 and b=2
+tolerance of 10^-5
+
+*/
 
 #include <stdio.h>
 #include <math.h>
@@ -26,7 +31,9 @@ double p(double x) {
     return pow(x,3)-x-1;
 }
 
-/*Output:
+/* Output:
+
 The root of the polynomial is: 1.324718
 The number of interations is: 17
+
 */
