@@ -4,32 +4,24 @@ use Bisection Method with x in [1,2] interval */
 #include <stdio.h>
 #include <math.h>
 
-double p(double x);
-
-int main() {
-    double a = 1.0;
-    double b = 2.0;
-    double tol = 1e-5;
-    int iterations = 0;
-    double m = (a + b)/2.0;
-    
+double f(double x);
+int main(void) {
+    double a = 1.0, b = 2.0, tol = 1e-5, m;
+    int it = 0; // iterations counter
     do {
-        if (p(a)*p(m)<0.0) {
+        m = (a + b)/2.0;
+        if (f(a)*f(m)<0.0) {
             b = m;
         }
         else {
             a = m;
         }
-        m = (a + b)/2.0;
-        iterations++;
-    } while(fabs(p(m))>tol);
+        it++;
+    } while(fabs(f(m))>tol);
 
     printf("The root of the polynomial is: %f\n", m);
-    printf("The number of interations is: %d", iterations);
-
-    return 0;    
+    printf("The number of interations is: %d", it);    
 }
-
 double p(double x) {
     return pow(x,3)-x-1;
 }
